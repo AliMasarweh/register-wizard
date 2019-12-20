@@ -13,13 +13,13 @@
   <body>
     <h1>Summary</h1>
 
-    <div>Phase1 - Personal Details:</div>
+    <div class="alert alert-info" role="alert">Phase1 - Personal Details:</div>
     <label id="lblPersonalDetails"></label>
 
-    <div>Phase2 - Address:</div>
+    <div class="alert alert-info" role="alert">Phase2 - Address:</div>
     <label id="lblAddress"></label>
 
-    <div>Phase3 - More Details:</div>
+    <div class="alert alert-info" role="alert">Phase3 - More Details:</div class="alert alert-info" role="alert">
     <label id="lblMoreDetails"></label>
 
     <!-- Optional JavaScript -->
@@ -30,9 +30,17 @@
         const lblAddress = document.getElementById('lblAddress');
         const lblMoreDetails = document.getElementById('lblMoreDetails');
 
-        lblPersonalDetails.innerHTML = localStorage.getItem("personal");
-        lblAddress.innerHTML = localStorage.getItem("address");
-        lblMoreDetails.innerHTML = localStorage.getItem("moreDetails");
+        const personalDetails = JSON.parse(localStorage.getItem("personal"));
+        const personal = `Name: ${personalDetails.name}<br />Email: ${personalDetails.email}<br />Birthday: ${personalDetails.birth}`;
+        lblPersonalDetails.innerHTML = personal;
+
+        const addressDetails = JSON.parse(localStorage.getItem("address"));
+        const address = `City: ${addressDetails.city}<br />Street: ${addressDetails.street}<br />Number: ${addressDetails.number}`;
+        lblAddress.innerHTML = address;
+
+        const moreDet = JSON.parse(localStorage.getItem("moreDetails"));
+        const more = `Image: ${moreDet.img}<br />Hobbies: ${moreDet.hobbies}`;
+        lblMoreDetails.innerHTML = more;
       }
     </script>
 
