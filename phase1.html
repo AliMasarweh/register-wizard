@@ -19,32 +19,32 @@
     <title>Phase 1</title>
   </head>
   <body>
-     <h1>Phase1</h1>
-      <form>
-        <div class="form-group">
-          <label for="name">name</label>
-          <input type="text" class="form-control" id="nameInput" />
-        </div>
-        <div class="form-group">
-          <label for="emailInput">Email address</label>
-          <input
-            type="email"
-            class="form-control"
-            id="emailInput"
-            aria-describedby="emailHelp"
-          />
-          <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
-          >
-        </div>
-        <div class="form-group">
-          <label for="birth">birth date</label>
-          <input type="text" class="form-control" id="birthInput" />
-        </div>
-        <button type="button" class="btn btn-primary" onclick="submitDetails()">
-          Next
-        </button>
-      </form>
+    <h1>Phase1</h1>
+    <form>
+      <div class="form-group">
+        <label for="name">name</label>
+        <input type="text" class="form-control" id="nameInput" />
+      </div>
+      <div class="form-group">
+        <label for="emailInput">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="emailInput"
+          aria-describedby="emailHelp"
+        />
+        <small id="emailHelp" class="form-text text-muted"
+          >We'll never share your email with anyone else.</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="birth">birth date</label>
+        <input type="text" class="form-control" id="birthInput" />
+      </div>
+      <button type="button" class="btn btn-primary" onclick="submitDetails()">
+        Next
+      </button>
+    </form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -56,24 +56,24 @@
       function submitDetails() {
         console.log(nameInput, emailInput, birthInput);
         console.log(nameInput.value, emailInput.value, birthInput.value);
-        if(!nameInput.value){
-                alert('Name is required!');
-                return;
-        } else if(!emailInput.value){
-          alert('Email is required!');
+        if (!nameInput.value) {
+          alert("Name is required!");
           return;
-        }else if(!birthInput.value){
-          alert('Birthday is required!');
+        } else if (!emailInput.value) {
+          alert("Email is required!");
+          return;
+        } else if (!birthInput.value) {
+          alert("Birthday is required!");
           return;
         }
         const personalDetails = {
-        name: nameInput.value,
-        email: emailInput.value,
-        birth: birthInput.value
-      };
-      JSON.stringify(personalDetails);
-      localStorage.setItem("personal", personalDetails);
-             window.open("phase2.html");
+          name: nameInput.value,
+          email: emailInput.value,
+          birth: birthInput.value
+        };
+        JSON.stringify(personalDetails);
+        localStorage.setItem("personal", personalDetails);
+        window.open("phase2.html");
       }
     </script>
     <script
