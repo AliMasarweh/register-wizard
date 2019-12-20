@@ -56,8 +56,15 @@
       function submitDetails() {
         console.log(nameInput, emailInput, birthInput);
         console.log(nameInput.value, emailInput.value, birthInput.value);
-        if(!nameInput.value || !emailInput.value || !birthInput.value){
-                alert('missing data');
+        if(!nameInput.value){
+                alert('Name is required!');
+                return;
+        } else if(!emailInput.value){
+          alert('Email is required!');
+          return;
+        }else if(!birthInput.value){
+          alert('Birthday is required!');
+          return;
         }
         else
              window.open("phase2.html");
