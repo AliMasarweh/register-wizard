@@ -11,9 +11,31 @@
     <title>Summary</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>Summary</h1>
+
+    <div>Phase1 - Personal Details:</div>
+    <label id="lblPersonalDetails"></label>
+
+    <div>Phase2 - Address:</div>
+    <label id="lblAddress"></label>
+
+    <div>Phase3 - More Details:</div>
+    <label id="lblMoreDetails"></label>
 
     <!-- Optional JavaScript -->
+    <script>
+      showSummary();
+      function showSummary() {
+        const lblPersonalDetails = document.getElementById('lblPersonalDetails');
+        const lblAddress = document.getElementById('lblAddress');
+        const lblMoreDetails = document.getElementById('lblMoreDetails');
+
+        lblPersonalDetails.innerHTML = localStorage.getItem("personal");
+        lblAddress.innerHTML = localStorage.getItem("address");
+        lblMoreDetails.innerHTML = localStorage.getItem("moreDetails");
+      }
+    </script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

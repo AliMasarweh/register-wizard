@@ -50,8 +50,7 @@
         hobbies: selectedhobbies
       };
 
-      JSON.stringify(moreDetails);
-      localStorage.setItem("moreDetails", moreDetails);
+      localStorage.setItem("moreDetails", JSON.stringify(moreDetails));
       window.open('summary.html');
     }
   </script>

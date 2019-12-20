@@ -49,9 +49,9 @@
         street: streetInput.value,
         number: addressNumber.value
       };
-      JSON.stringify(addressDetails);
-      localStorage.setItem("address", addressDetails);
-      window.open('phase3.html');
+      
+      localStorage.setItem("address", JSON.stringify(addressDetails));
+      window.open('phase3.html', '_self');
     }
   </script>
 
