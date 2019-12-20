@@ -71,8 +71,7 @@
           email: emailInput.value,
           birth: birthInput.value
         };
-        JSON.stringify(personalDetails);
-        localStorage.setItem("personal", personalDetails);
+        localStorage.setItem("personal", JSON.stringify(personalDetails));
         window.open("phase2.html", "_self");
       }
     </script>
